@@ -1,0 +1,64 @@
+# -------------------------
+# Sistema operativo
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Entornos y dependencias
+# -------------------------
+.env
+.venv
+venv/
+.env*/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# Archivos de configuracion locales de VSCode / IDE (opcional)
+.vscode/
+.idea/
+
+# -------------------------
+# Jupyter Notebooks
+# -------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Historial de JupyterLab (si se diera)
+.jupyter/
+
+# -------------------------
+# Datos: NO versionar volumenes grandes ni dumps completos
+# -------------------------
+
+# Volcado gigante de OpenFoodFacts (ruta que describes en el TFM)
+data_raw/openfoodfacts/en.openfoodfacts.org.products.csv
+
+# ignorar cualquier dump grande en openfoodfacts
+data_raw/openfoodfacts/*.csv
+data_raw/openfoodfacts/*.tsv
+
+# evitar subir datos brutos y procesados
+data_raw/
+data_processed/
+
+# -------------------------
+# Salidas temporales y logs
+# -------------------------
+*.log
+*.tmp
+*.bak
+
+# Archivos de cache de herramientas
+.ipynb_checkpoints
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# -------------------------
+# Power BI (dejamos el .pbix dentro del control de versiones)
+# -------------------------
+# Si alguna vez generas backups automaticos:
+# *.pbix.tmp

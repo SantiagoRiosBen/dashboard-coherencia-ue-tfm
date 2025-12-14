@@ -1,0 +1,19 @@
+name: tfm_dashboard
+channels:
+  - defaults
+dependencies:
+  - r-essentials
+  - python=3.14
+  - r-base=3.6.1
+  - numpy
+  - matplotlib
+  - jupyterlab
+  - duckdb
+  - plotly
+  - pyarrow
+  - pandas
+  - scikit-learn
+  - ipykernel
+  - openpyxl
+  - requests
+prefix: C:\Users\santi\anaconda3\envs\tfm_dashboard

@@ -1,18 +1,18 @@
-\# Código fuente (`src`)
+# Código fuente (`src`)
 
 
 
-Esta carpeta está reservada para el \*\*código Python reutilizable\*\* del proyecto.  
+Esta carpeta está reservada para el **código Python reutilizable** del proyecto.  
 
 Su objetivo es separar la lógica de negocio (ETL, indicadores, visualizaciones) de los notebooks, para que:
 
 
 
-\- Los notebooks sean más ligeros y legibles.
+- Los notebooks sean más ligeros y legibles.
 
-\- Sea más fácil \*\*reutilizar funciones\*\*.
+- Sea más fácil **reutilizar funciones**.
 
-\- Se pueda evolucionar hacia un \*\*pipeline más modular y mantenible\*\*.
+- Se pueda evolucionar hacia un **pipeline más modular y mantenible**.
 
 
 
@@ -24,7 +24,7 @@ Actualmente contiene sólo parte del código, pero está pensada como espacio na
 
 
 
-\## 1. Estructura recomendada
+## 1. Estructura recomendada
 
 
 
@@ -32,7 +32,7 @@ Una estructura típica dentro de `src/` podría ser:
 
 
 
-\- `src/etl/`  
+- `src/etl/`  
 
 &nbsp; Funciones de extracción, transformación y carga de cada fuente:
 
@@ -46,7 +46,7 @@ Una estructura típica dentro de `src/` podría ser:
 
 
 
-\- `src/indicators/`  
+- `src/indicators/`  
 
 &nbsp; Funciones para:
 
@@ -58,7 +58,7 @@ Una estructura típica dentro de `src/` podría ser:
 
 
 
-\- `src/viz/`  
+- `src/viz/`  
 
 &nbsp; Utilidades para:
 
@@ -70,7 +70,7 @@ Una estructura típica dentro de `src/` podría ser:
 
 
 
-\- `src/utils/` (opcional)  
+- `src/utils/` (opcional)  
 
 &nbsp; Funciones auxiliares genéricas:
 
@@ -86,11 +86,11 @@ Una estructura típica dentro de `src/` podría ser:
 
 
 
-\## 2. Uso desde los notebooks
+## 2. Uso desde los notebooks
 
 
 
-La idea es que los notebooks de `notebooks/pipelines/` y `notebooks/exploratory/` \*\*importen\*\* funciones desde `src` en lugar de duplicar código.
+La idea es que los notebooks de `notebooks/pipelines/` y `notebooks/exploratory/` **importen** funciones desde `src` en lugar de duplicar código.
 
 
 
@@ -98,15 +98,15 @@ Ejemplo de patrón recomendado (en un notebook):
 
 
 
-&nbsp;   from src.etl.openfoodfacts import build\_openfoodfacts\_subset
+&nbsp;   from src.etl.openfoodfacts import build_openfoodfacts_subset
 
-&nbsp;   from src.indicators.nutrition import compute\_off\_nutrient\_index
+&nbsp;   from src.indicators.nutrition import compute_off_nutrient_index
 
 
 
-&nbsp;   df\_subset = build\_openfoodfacts\_subset(path\_raw, path\_processed)
+&nbsp;   df_subset = build_openfoodfacts_subset(path_raw, path_processed)
 
-&nbsp;   df\_index = compute\_off\_nutrient\_index(df\_subset)
+&nbsp;   df_index = compute_off_nutrient_index(df_subset)
 
 
 
@@ -114,11 +114,11 @@ Ventajas de este enfoque:
 
 
 
-\- Si se corrige un bug, se corrige en un solo lugar.
+- Si se corrige un bug, se corrige en un solo lugar.
 
-\- Los notebooks quedan más centrados en el \*\*flujo\*\* y menos en el detalle de implementación.
+- Los notebooks quedan más centrados en el **flujo** y menos en el detalle de implementación.
 
-\- Facilita escribir pruebas y extender el proyecto tras el TFM.
+- Facilita escribir pruebas y extender el proyecto tras el TFM.
 
 
 
@@ -126,7 +126,7 @@ Ventajas de este enfoque:
 
 
 
-\## 3. Convenciones de código
+## 3. Convenciones de código
 
 
 
@@ -134,19 +134,19 @@ Para mantener el código consistente, se recomienda:
 
 
 
-\- \*\*Nombres de módulos y ficheros en minúsculas\*\*, con guiones bajos:
+- **Nombres de módulos y ficheros en minúsculas**, con guiones bajos:
 
-&nbsp; - `openfoodfacts.py`, `eurostat\_hicp.py`, `faostat\_cahd.py`, etc.
+&nbsp; - `openfoodfacts.py`, `eurostat_hicp.py`, `faostat_cahd.py`, etc.
 
-\- \*\*Funciones con verbos descriptivos\*\*:
+- **Funciones con verbos descriptivos**:
 
-&nbsp; - `load\_hicp\_raw()`, `clean\_hicp()`, `build\_panel\_country\_year()`.
+&nbsp; - `load_hicp_raw()`, `clean_hicp()`, `build_panel_country_year()`.
 
-\- \*\*Documentar cada función\*\* con docstrings tipo:
+- **Documentar cada función** con docstrings tipo:
 
 
 
-&nbsp;   def build\_panel\_country\_year(...):
+&nbsp;   def build_panel_country_year(...):
 
 &nbsp;       """
 
@@ -174,7 +174,7 @@ Para mantener el código consistente, se recomienda:
 
 
 
-\- Evitar lógica “mágica” en los notebooks: si un bloque de código se repite o es complejo, conviene moverlo a `src/`.
+- Evitar lógica “mágica” en los notebooks: si un bloque de código se repite o es complejo, conviene moverlo a `src/`.
 
 
 
@@ -182,7 +182,7 @@ Para mantener el código consistente, se recomienda:
 
 
 
-\## 4. Dependencias y entorno
+## 4. Dependencias y entorno
 
 
 
@@ -190,11 +190,11 @@ El código de `src/` asume que:
 
 
 
-\- El entorno de Python se ha creado a partir de `environment.yml`.
+- El entorno de Python se ha creado a partir de `environment.yml`.
 
-\- Las rutas a `data\_raw/` y `data\_processed/` respetan la estructura descrita en los respectivos README.
+- Las rutas a `data_raw/` y `data_processed/` respetan la estructura descrita en los respectivos README.
 
-\- El proyecto se ejecuta desde la raíz del repositorio (para que las rutas relativas funcionen correctamente).
+- El proyecto se ejecuta desde la raíz del repositorio (para que las rutas relativas funcionen correctamente).
 
 
 
@@ -202,11 +202,11 @@ En los módulos de `src/` se recomienda:
 
 
 
-\- Trabajar con \*\*rutas relativas\*\* respecto a la raíz del proyecto.
+- Trabajar con **rutas relativas** respecto a la raíz del proyecto.
 
-\- Evitar rutas absolutas específicas del equipo local.
+- Evitar rutas absolutas específicas del equipo local.
 
-\- Documentar en los docstrings los supuestos sobre la estructura de carpetas.
+- Documentar en los docstrings los supuestos sobre la estructura de carpetas.
 
 
 
@@ -214,7 +214,7 @@ En los módulos de `src/` se recomienda:
 
 
 
-\## 5. Buenas prácticas para extender `src/`
+## 5. Buenas prácticas para extender `src/`
 
 
 
@@ -222,9 +222,9 @@ Si en el futuro se amplía el proyecto:
 
 
 
-\- Crear nuevos módulos en la subcarpeta adecuada (`etl`, `indicators`, `viz`, etc.).
+- Crear nuevos módulos en la subcarpeta adecuada (`etl`, `indicators`, `viz`, etc.).
 
-\- Mantener la \*\*separación de responsabilidades\*\*:
+- Mantener la **separación de responsabilidades**:
 
 &nbsp; - ETL: solo limpieza, filtrado, agregación de datos.
 
@@ -232,7 +232,7 @@ Si en el futuro se amplía el proyecto:
 
 &nbsp; - Visualización: solo gráficos/tablas.
 
-\- Considerar añadir:
+- Considerar añadir:
 
 &nbsp; - Pruebas básicas (por ejemplo, con `pytest`).
 
@@ -246,7 +246,7 @@ Si en el futuro se amplía el proyecto:
 
 
 
-\## 6. Checklist rápida
+## 6. Checklist rápida
 
 
 
@@ -254,11 +254,10 @@ Antes de usar `src/` desde un notebook:
 
 
 
-\- \[ ] ¿Se ha creado el entorno a partir de `environment.yml`?
+- [ ] ¿Se ha creado el entorno a partir de `environment.yml`?
 
-\- \[ ] ¿Los módulos de `src/` tienen nombres coherentes y docstrings básicos?
+- [ ] ¿Los módulos de `src/` tienen nombres coherentes y docstrings básicos?
 
-\- \[ ] ¿Las rutas internas apuntan a `data\_raw/` y `data\_processed/` según lo descrito?
+- [ ] ¿Las rutas internas apuntan a `data_raw/` y `data_processed/` según lo descrito?
 
-\- \[ ] ¿Los notebooks importan funciones desde `src/` en lugar de duplicar código?
-
+- [ ] ¿Los notebooks importan funciones desde `src/` en lugar de duplicar código?

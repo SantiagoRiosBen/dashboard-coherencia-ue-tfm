@@ -1,4 +1,4 @@
-\# Notebooks del proyecto
+# Notebooks del proyecto
 
 
 
@@ -14,17 +14,17 @@ La organización sigue la lógica del flujo de trabajo descrito en la memoria de
 
 
 
-\## 1. Estructura general
+## 1. Estructura general
 
 
 
-\- `notebooks/exploratory/`  
+- `notebooks/exploratory/`  
 
 &nbsp; Cuadernos de exploración y comprensión de datos. Se utilizan para inspeccionar las fuentes originales, verificar su estructura y calcular estadísticas descriptivas.
 
 
 
-\- `notebooks/pipelines/`  
+- `notebooks/pipelines/`  
 
 &nbsp; Cuadernos de tipo ETL (extracción, transformación y carga). A partir de las fuentes en `data\_raw` generan los ficheros intermedios y finales en `data\_processed`.
 
@@ -34,7 +34,7 @@ La organización sigue la lógica del flujo de trabajo descrito en la memoria de
 
 
 
-\## 2. Contenido de `notebooks/exploratory/`
+## 2. Contenido de `notebooks/exploratory/`
 
 
 
@@ -42,7 +42,7 @@ Cuadernos orientados a entender cada fuente y el panel integrado:
 
 
 
-\- `01\_exploracion\_off.ipynb`  
+- `01\_exploracion\_off.ipynb`  
 
 &nbsp; Exploración de la base de composición de alimentos de OpenFoodFacts:
 
@@ -56,7 +56,7 @@ Cuadernos orientados a entender cada fuente y el panel integrado:
 
 
 
-\- `02\_exploracion\_eurostat.ipynb`  
+- `02\_exploracion\_eurostat.ipynb`  
 
 &nbsp; Exploración de las tablas de Eurostat:
 
@@ -72,7 +72,7 @@ Cuadernos orientados a entender cada fuente y el panel integrado:
 
 
 
-\- `03\_exploracion\_faostat.ipynb`  
+- `03\_exploracion\_faostat.ipynb`  
 
 &nbsp; Exploración del dominio CoAHD de FAOSTAT:
 
@@ -86,7 +86,7 @@ Cuadernos orientados a entender cada fuente y el panel integrado:
 
 
 
-\- `21\_panel\_indicadores\_ue.ipynb`  
+- `21\_panel\_indicadores\_ue.ipynb`  
 
 &nbsp; Exploración del panel integrado país–año:
 
@@ -104,7 +104,7 @@ Cuadernos orientados a entender cada fuente y el panel integrado:
 
 
 
-\## 3. Contenido de `notebooks/pipelines/`
+## 3. Contenido de `notebooks/pipelines/`
 
 
 
@@ -112,11 +112,11 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\### 3.1. OpenFoodFacts
+### 3.1. OpenFoodFacts
 
 
 
-\- `01\_pre\_etl\_openfoodfacts.ipynb`  
+- `01\_pre\_etl\_openfoodfacts.ipynb`  
 
 &nbsp; - Lectura del volcado original `en.openfoodfacts.org.products.csv` desde `data\_raw/openfoodfacts/`.
 
@@ -126,7 +126,7 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\- `11\_etl\_off\_ue.ipynb`  
+- `11\_etl\_off\_ue.ipynb`  
 
 &nbsp; - Filtrado del subconjunto de productos para:
 
@@ -140,7 +140,7 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\- `21\_indice\_nutricional\_off.ipynb`  
+- `21\_indice\_nutricional\_off.ipynb`  
 
 &nbsp; - Cálculo de percentiles 5 y 95 para cada nutriente crítico.
 
@@ -158,11 +158,11 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\### 3.2. Eurostat
+### 3.2. Eurostat
 
 
 
-\- `12\_etl\_eurostat\_hicp.ipynb`  
+- `12\_etl\_eurostat\_hicp.ipynb`  
 
 &nbsp; - Lectura de `prc\_hicp\_aind\_tabular.tsv` desde `data\_raw/eurostat/`.
 
@@ -186,7 +186,7 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\- `13\_etl\_eurostat\_hbs.ipynb`  
+- `13\_etl\_eurostat\_hbs.ipynb`  
 
 &nbsp; - Lectura de `hbs\_str\_t211\_tabular.tsv` desde `data\_raw/eurostat/`.
 
@@ -214,11 +214,11 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\### 3.3. FAOSTAT
+### 3.3. FAOSTAT
 
 
 
-\- `14\_etl\_faostat.ipynb`  
+- `14\_etl\_faostat.ipynb`  
 
 &nbsp; - Lectura de `FAOSTAT\_data\_en\_12-9-2025.csv` desde `data\_raw/faostat/`.
 
@@ -248,11 +248,11 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\### 3.4. Panel integrado
+### 3.4. Panel integrado
 
 
 
-\- (Incluido en alguno de los cuadernos anteriores o en uno específico del panel, según versión del repositorio)  
+- (Incluido en alguno de los cuadernos anteriores o en uno específico del panel, según versión del repositorio)  
 
 &nbsp; - Unión de las tablas agregadas por país y año:
 
@@ -272,13 +272,13 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\## 4. Orden recomendado de ejecución
+## 4. Orden recomendado de ejecución
 
 
 
-1\. Preparar el entorno de Python a partir de `environment.yml` en la raíz del repositorio.
+1. Preparar el entorno de Python a partir de `environment.yml` en la raíz del repositorio.
 
-2\. Ejecutar los cuadernos de `notebooks/pipelines/` en el siguiente orden:
+2. Ejecutar los cuadernos de `notebooks/pipelines/` en el siguiente orden:
 
 &nbsp;  1. `01\_pre\_etl\_openfoodfacts.ipynb`
 
@@ -294,7 +294,7 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 &nbsp;  7. Cuaderno de integración del panel (según nombre en la versión final del repositorio).
 
-3\. Verificar, con `21\_panel\_indicadores\_ue.ipynb` en `notebooks/exploratory/`, que `panel\_coherencia\_ue.parquet` se ha generado correctamente.
+3. Verificar, con `21\_panel\_indicadores\_ue.ipynb` en `notebooks/exploratory/`, que `panel\_coherencia\_ue.parquet` se ha generado correctamente.
 
 
 
@@ -302,7 +302,7 @@ Cuadernos que ejecutan los procesos ETL y generan los ficheros Parquet utilizado
 
 
 
-\## 5. Requisitos de ejecución
+## 5. Requisitos de ejecución
 
 
 
@@ -310,11 +310,11 @@ Antes de ejecutar los notebooks:
 
 
 
-\- Crear el entorno de trabajo a partir de `environment.yml` en la raíz del repositorio.
+- Crear el entorno de trabajo a partir de `environment.yml` en la raíz del repositorio.
 
-\- Activar el entorno y lanzar JupyterLab desde la raíz del proyecto.
+- Activar el entorno y lanzar JupyterLab desde la raíz del proyecto.
 
-\- Ajustar, si fuera necesario, las rutas relativas definidas en las primeras celdas de cada notebook, para que apunten correctamente a `data\_raw/` y `data\_processed/`.
+- Ajustar, si fuera necesario, las rutas relativas definidas en las primeras celdas de cada notebook, para que apunten correctamente a `data\_raw/` y `data\_processed/`.
 
 
 

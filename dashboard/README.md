@@ -26,7 +26,7 @@ El objetivo del dashboard es **visualizar de forma comparativa** la relación en
 
 - **Power BI Desktop** para Windows.  
 
-&nbsp; Se recomienda utilizar una versión igual o posterior a la empleada en el TFM (indicar aquí la versión concreta cuando se conozca, por ejemplo: *2.133.x o superior*).
+&nbsp; Se recomienda utilizar una versión igual o posterior a la empleada en el TFM (2.149.1203.0 64-bit).
 
 
 
